@@ -1,5 +1,6 @@
 package it.epicode.w6d3u2te.controller;
 
+import it.epicode.w6d3u2te.dto.StudenteDto;
 import it.epicode.w6d3u2te.exception.NotFoundException;
 import it.epicode.w6d3u2te.model.Studente;
 import it.epicode.w6d3u2te.service.StudenteService;
@@ -18,8 +19,8 @@ public class StudenteController {
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public Studente saveStudente(@RequestBody Studente studente){
-        return studenteService.saveStudente(studente);
+    public Studente saveStudente(@RequestBody StudenteDto studenteDto) throws NotFoundException {
+        return studenteService.saveStudente(studenteDto);
     }
 
     @GetMapping("")
@@ -33,8 +34,8 @@ public class StudenteController {
     }
 
     @PutMapping("/{matricola}")
-    public Studente updateStudente(@PathVariable int matricola,@RequestBody Studente studente)throws NotFoundException{
-        return studenteService.updateStudente(matricola,studente);
+    public Studente updateStudente(@PathVariable int matricola,@RequestBody StudenteDto studenteDto)throws NotFoundException{
+        return studenteService.updateStudente(matricola,studenteDto);
     }
 
     @DeleteMapping("/{matricola}")
