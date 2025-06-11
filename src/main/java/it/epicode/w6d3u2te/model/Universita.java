@@ -1,5 +1,6 @@
 package it.epicode.w6d3u2te.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -17,6 +18,7 @@ public class Universita {
     private String nome;
     private String citta;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "universita")
     private List<Studente> studenti;
 }
