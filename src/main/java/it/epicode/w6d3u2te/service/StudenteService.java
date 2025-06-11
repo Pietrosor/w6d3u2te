@@ -4,9 +4,11 @@ import it.epicode.w6d3u2te.exception.NotFoundException;
 import it.epicode.w6d3u2te.model.Studente;
 import it.epicode.w6d3u2te.repository.StudenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StudenteService {
     @Autowired
     private StudenteRepository studenteRepository;
