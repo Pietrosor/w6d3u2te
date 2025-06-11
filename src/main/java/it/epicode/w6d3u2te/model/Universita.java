@@ -6,6 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Entity
 public class Universita {
@@ -16,4 +18,5 @@ public class Universita {
     private String citta;
 
     @OneToMany(mappedBy = "universita")
+    private List<Studente> studenti;
 }
